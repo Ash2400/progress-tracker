@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/progress-tracker/static/css/main.f3b61ae1.css",
+    "main.js": "/progress-tracker/static/js/main.4a5c2a46.js",
+    "index.html": "/progress-tracker/index.html",
+    "main.f3b61ae1.css.map": "/progress-tracker/static/css/main.f3b61ae1.css.map",
+    "main.4a5c2a46.js.map": "/progress-tracker/static/js/main.4a5c2a46.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3b61ae1.css",
+    "static/js/main.4a5c2a46.js"
+  ]
+}
