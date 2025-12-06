@@ -1,0 +1,318 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #e0f7ff 0%, #b3e5ff 50%, #89d2ff 100%);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-bar button {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.filter-bar button.active {
+  border: 2px solid #333;
+}
+
+
+.progress-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.progress-form input,
+.progress-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.progress-form button {
+  padding: 12px;
+  background: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.progress-form button:hover {
+  background: #0056b3;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.color-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+}
+
+.color-circle.selected {
+  border: 3px solid #333;
+  transform: scale(1.15);
+}
+
+/* Task Summary */
+.task-summary {
+  background-color: #f1f7ff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.task-summary p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.progress {
+  padding: 15px;
+  border-radius: 10px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s;
+}
+
+.progress:hover {
+  transform: translateY(-3px);
+}
+
+.progress h3 {
+  margin-top: 0;
+}
+
+.progress-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.delete-btn {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 7px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+.edit-color-btn {
+  background: #555;
+  color: #fff;
+  border: none;
+  padding: 7px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.edit-color-btn:hover {
+  background: #333;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 15px;
+}
+
+.scrollable-modal {
+  background: #fff;
+  width: 500px;
+  max-width: 90%;
+  min-width: 300px;
+  max-height: 80vh;
+  min-height: 200px;
+  padding: 25px;
+  border-radius: 12px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  resize: both;
+}
+
+.modal-body h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.modal-body input,
+.modal-body textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+}
+
+.modal-body textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-actions .delete-btn {
+  background-color: red;
+  color: #fff;
+}
+
+.modal-actions button:first-child {
+  background-color: #007bff;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .progress-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+  .progress-form input,
+  .progress-form textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .progress-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .filter-bar button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .color-circle {
+    width: 24px;
+    height: 24px;
+  }
+  .scrollable-modal {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
+  .progress {
+    min-height: 100px;
+    padding: 10px;
+  }
+  .progress-form input,
+  .progress-form textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+  .progress-form button {
+    font-size: 13px;
+    padding: 8px;
+  }
+  .filter-bar button {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+  .scrollable-modal {
+    width: 98%;
+    padding: 15px;
+  }
+}
